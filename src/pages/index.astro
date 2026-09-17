@@ -1,11 +1,285 @@
----
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+<!doctype html>
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width", initial-scale=1.0 />
+    <title>Starrylume</title>
+  </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/">Starrylume</a>
 
-<Layout>
-	<Welcome />
-</Layout>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#blogs">Blogs</a>
+            </nav>
+        </header>
+        <main>
+            <section id="intro"> 
+                <h1>Starrylume</h1>
+
+                <p class="tagline">C++ · Biology · Physics</p>
+
+                <p>
+                    I am an undergraduate student interested in systems programming,
+                    computer graphics, and physics simulation.
+                </p>
+
+                <p class="intro-links">
+                    <a href="https://github.com/starrylume">GitHub</a>
+                    <span class="separator">·</span>
+                    <a href="mailto:contact@starrymist.me">Email</a>
+                </p>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+
+                <article>
+                    <h3>RigidBody2D</h3>
+                    <p class="meta">C++ · CMake · raylib</p>
+                    <p>
+                        A 2D rigid-body simulation in C++ with real-time visualization,
+                        collision detection and response, and a simple broad phase based 
+                        on sorting and axis pruning.
+                    </p>
+                    <p>
+                        <a href="https://github.com/starrylume/RigidBody2D-GL">GitHub</a>
+                    </p>
+                </article>
+
+                <article>
+                    <h3>C-Matrix-Lib</h3>
+                    <p class="meta">C · OpenMP</p>
+                    <p>
+                        A matrix library in C implementing basic linear algebra operations, 
+                        with matrix multiplication optimized through cache-friendly loop 
+                        ordering and OpenMP parallelization.
+                    </p>
+                    <p>
+                        <a href="https://github.com/starrylume/C-Matrix-Lib">GitHub</a>
+                    </p>
+
+                </article>
+            </section>
+
+
+            <section id="skills">
+                <h2>Skills</h2>
+
+                <h3>Languages</h3>
+                <ul>
+                    <li>C++</li>
+                    <li>C</li>
+                    <li>Python</li>
+                </ul>
+
+                <h3>Tools & Technologies</h3>
+                <ul>
+                    <li>Linux</li>
+                    <li>Git</li>
+                    <li>GDB</li>
+                    <li>CMake</li>
+                    <li>raylib</li>
+                    <li>Numpy</li>
+                </ul>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+
+                <article>
+                    <h3>Undergraduate Education</h3>
+                    <p class="meta">2023–2027</p>
+                    <p>Biology major · Physics minor</p>
+                </article>
+            </section>
+
+            <section id="study">
+                <h2>Selected Study</h2>
+
+                <h3>Computer Science</h3>
+                <ul>
+                    <li>Data Structures - UIUC CS 225</li>
+                </ul>
+            </section>
+
+            <section id="blogs">
+                <h2>Blogs</h2>
+                <p class="meta">Technical notes and writing are coming soon.</p>
+                <!-- <a href="https://blog.starrymist.me">Visit my blog</a> -->
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>
+                    Feel free to reach out through GitHub or email.
+                </p>
+                <p>
+                    <a href="https://github.com/starrylume">GitHub</a>
+                    <span class="separator">·</span>
+                    <a href="mailto:contact@starrymist.me">Email</a>
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Starrylume</p>
+        </footer>
+    </body>
+    <style>
+    :root{
+        --bg: #f7f7f5;
+        --text: #1f1f1f;
+        --muted: #666666;
+        --border: #ddddda;
+        --accent: #315f85;
+    }
+    body {
+        margin: 0;
+        font-family: 
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+        line-height: 1.6;
+
+        background: var(--bg);
+        color: var(--text);
+    }
+    .tagline{
+        font-size: 1.25rem;
+        margin-top: 0;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+    }
+    .meta{
+        color: var(--muted);
+    }
+    .intro-links{
+        margin-top: 1.5rem;
+    }
+    .separator{
+        margin: 0 0.2rem;
+    }
+    header{
+        border-bottom: 1px solid var(--border);
+    }
+    main{
+        max-width: 990px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    nav{
+        max-width: 990px;
+        margin: 0 auto;
+        padding: 2rem;
+
+        display: flex;
+        gap: 1.5rem;
+    }
+    nav a{ 
+        color: inherit;
+        text-decoration: none;
+    }
+    nav a:hover{
+        opacity: 0.65;
+    }
+    nav a:first-child{
+        margin-right: auto;
+        font-weight: 600;
+    }
+    main > section{
+        margin-bottom: 5rem;
+        scroll-margin-top: 2rem;
+    }
+    main > section:last-child{
+        margin-bottom: 2rem;
+    }
+    
+    #intro{
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+    #intro h1{
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+    #intro p{
+        max-width: 650px;
+    }
+
+    #projects article{
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--border);
+    }
+    #projects article:last-child{
+        border-bottom: none;
+    }
+    #projects article p{
+        margin-bottom: 0.5rem;
+    }
+
+    #skills ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        margin-bottom: 0.5rem;
+
+        padding-left: 0;
+        list-style: none;
+    }
+
+    #skills li{
+        padding: 0.25rem 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 0.5rem;
+    }
+
+    #education article,
+    #study article{
+        margin-bottom: 2.5rem;
+    }
+    #education p,
+    #study p{
+        margin-top: 0.5rem;
+    }
+
+    h2{
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h3{
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    main a{
+        color: inherit;
+        text-underline-offset: 0.2rem;
+    }
+    main a:hover{
+        opacity: 0.65;
+    }
+    footer {
+        padding: 2rem;
+        text-align: center;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+    }
+
+    @media (max-width: 700px){
+        nav{
+            padding: 1.25rem;
+            gap: 1rem;
+        }
+    }
+    </style>
+</html>
