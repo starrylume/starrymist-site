@@ -4,12 +4,16 @@
   <head>
     <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width", initial-scale=1.0 />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Starrylume</title>
   </head>
     <body>
         <header>
             <nav>
-                <a href="/">Starrylume</a>
+                <a class="site-name" href="/">
+                    <img src="/logo-light.svg" alt="" />
+                    <span>Starrylume</span>
+                </a>
 
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
@@ -273,6 +277,18 @@
         text-align: center;
         border-top: 1px solid var(--border);
         color: var(--muted);
+    }
+
+    .site-name{
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+        font-weight: 500;
+    }
+    .site-name img{
+        width: 2rem;
+        height: 2rem;
     }
 
     @media (max-width: 700px){
